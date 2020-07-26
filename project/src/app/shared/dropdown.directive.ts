@@ -11,6 +11,8 @@ export class DropdownDirective implements OnInit{
     //     this.isOpen = !this.isOpen;
     // }
 
+    // Closing the Dropdown From Anywhere
+    
     @HostListener('document:click', ['$event']) toggleOpen(event: Event) {
         this.isOpen = this.elRef.nativeElement.contains(event.target) ? !this.isOpen : false;
     }
