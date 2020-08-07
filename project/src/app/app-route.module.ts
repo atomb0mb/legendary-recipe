@@ -5,7 +5,7 @@ import { NgModule } from '@angular/core';
 
 
 const appRoutes: Routes = [
-    { path: '',  redirectTo: '/recipes', pathMatch: 'full' },
+    { path: '',  redirectTo: '/recipes', pathMatch: 'full' }, // only redirect if the full path is empty
     { path: 'recipes', component: RecipesComponent },
     { path: 'shopping-list', component: ShoppingListComponent },
   ];
