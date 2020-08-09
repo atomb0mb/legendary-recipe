@@ -1,12 +1,11 @@
 import { Recipe } from './recipe.model';
-import { EventEmitter, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Ingredient } from '../shared/ingredient.model';
 import { ShoppingListService } from '../shopping-list/shopping-list.service';
 
 @Injectable() // you want to inject a service into a service
 export class RecipeService {
 
-  recipeSeleted = new EventEmitter<Recipe>();
 
   private recipes: Recipe[] = [
         new Recipe('A Test Recipe', 'Description 1', 'https://www.onegreenplanet.org/wp-content/uploads/2015/03/Fresh-Summer-Rolls-1200x800.jpg', [
