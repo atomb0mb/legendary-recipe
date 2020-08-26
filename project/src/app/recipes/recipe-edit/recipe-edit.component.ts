@@ -102,6 +102,9 @@ export class RecipeEditComponent implements OnInit {
 
   onRemoveIngredient(index: number) {
     (<FormArray>this.recipeForm.get('ingredients')).removeAt(index);
+
+    // Above example is to remove one index at once, but if we want to remove every at once
+    // (<FormArray>this.recipeForm.get('ingredients')).clear(); angular8+
   }
 
 
