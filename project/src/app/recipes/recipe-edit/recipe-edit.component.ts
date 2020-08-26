@@ -65,6 +65,14 @@ export class RecipeEditComponent implements OnInit {
     return (<FormArray>this.recipeForm.get('ingredients')).controls;
   }
 
+  // Remember to have type = button and not submit so that whenever you add ingredient, it wont submit too
+  onAddIngredient() {
+    (<FormArray>this.recipeForm.get('ingredients')).push(new FormGroup({
+      'name': new FormControl(),
+      'amount': new FormControl(),
+    }))
+  }
+
   onSubmit() {
     console.log(this.recipeForm.value);
   }
