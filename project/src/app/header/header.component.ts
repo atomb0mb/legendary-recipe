@@ -14,4 +14,8 @@ export class HeaderComponent{
     onSaveDetail() {
         this.dataService.storeRecipes();
     }
+
+    onFetchDetail() {
+        this.dataService.getRecipes();
+    }
 }
