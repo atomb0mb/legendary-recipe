@@ -9,17 +9,19 @@ export class RecipeService {
 
 
   recipeChanged = new Subject<Recipe[]>();
-
-  private recipes: Recipe[] = [
-        new Recipe('A Test Recipe', 'Description 1', 'https://www.onegreenplanet.org/wp-content/uploads/2015/03/Fresh-Summer-Rolls-1200x800.jpg', [
-          new Ingredient('Banana', 10)
-        ]),
-        new Recipe('Test Recipe 2', 'Test it', 'https://www.onegreenplanet.org/wp-content/uploads/2015/03/Fresh-Summer-Rolls-1200x800.jpg', [
-          new Ingredient('Lemon', 12),
-          new Ingredient('Lettuce', 10) 
-        ]),
+  // dummy data
+  // private recipes: Recipe[] = [
+  //       new Recipe('A Test Recipe', 'Description 1', 'https://www.onegreenplanet.org/wp-content/uploads/2015/03/Fresh-Summer-Rolls-1200x800.jpg', [
+  //         new Ingredient('Banana', 10)
+  //       ]),
+  //       new Recipe('Test Recipe 2', 'Test it', 'https://www.onegreenplanet.org/wp-content/uploads/2015/03/Fresh-Summer-Rolls-1200x800.jpg', [
+  //         new Ingredient('Lemon', 12),
+  //         new Ingredient('Lettuce', 10) 
+  //       ]),
         
-  ];
+  // ];
+
+  private recipes: Recipe[] = [];
 
 
   constructor(private slService: ShoppingListService){
