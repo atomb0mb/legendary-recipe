@@ -16,7 +16,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
     private dataStorageService: DataStorageService,
     private authService: AuthService
   ) {}
-
+  // hide the recipe tab if not login
   ngOnInit() {
     this.userSub = this.authService.user.subscribe(user => {
       this.isAuthenticated = !!user;
@@ -34,7 +34,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   onLogout() {
     this.authService.logout();
   }
-
+  // to release memory
   ngOnDestroy() {
     this.userSub.unsubscribe();
   }

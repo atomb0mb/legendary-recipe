@@ -113,7 +113,7 @@ export class AuthService {
       this.logout();
     }, expirationDuration);
   }
-
+  // Handle the auth
   private handleAuthentication(
     email: string,
     userId: string,
