@@ -7,7 +7,7 @@ import { RecipesDetailComponent } from './recipes/recipes-detail/recipes-detail.
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component'
 import { RecipeResolverService } from './recipes/recipe-resolver.service';
 
-
+//s
 const appRoutes: Routes = [
     { path: '', redirectTo: '/recipes', pathMatch: 'full' }, // only redirect if the full path is empty
     {
