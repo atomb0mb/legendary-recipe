@@ -8,11 +8,11 @@ export class ShoppingListService {
     new Ingredient('Apples', 5),
     new Ingredient('Tomatoes', 10),
   ];
-
+  // get list of ingredient
   getIngredients() {
     return this.ingredients.slice();
   }
-
+  // get an ingredient
   getIngredient(index: number) {
     return this.ingredients[index];
   }
@@ -21,7 +21,7 @@ export class ShoppingListService {
     this.ingredients.push(ingredient);
     this.ingredientsChanged.next(this.ingredients.slice());
   }
-
+  // add ingredient to the array
   addIngredients(ingredients: Ingredient[]) {
     // for (let ingredient of ingredients) {
     //   this.addIngredient(ingredient);
@@ -29,7 +29,7 @@ export class ShoppingListService {
     this.ingredients.push(...ingredients);
     this.ingredientsChanged.next(this.ingredients.slice());
   }
-
+  // update 
   updateIngredient(index: number, newIngredient: Ingredient) {
     this.ingredients[index] = newIngredient;
     this.ingredientsChanged.next(this.ingredients.slice());

@@ -23,7 +23,8 @@ export class AuthService {
   private tokenExpirationTimer: any;
 
   constructor(private http: HttpClient, private router: Router) {}
-
+  // Signup on database
+  // for more info https://firebase.google.com/docs/reference/rest/auth#section-api-usage
   signup(email: string, password: string) {
     return this.http
       .post<AuthResponseData>(
@@ -69,7 +70,7 @@ export class AuthService {
         })
       );
   }
-
+  // auto login if token still not expires
   autoLogin() {
     const userData: {
       email: string;
@@ -80,14 +81,14 @@ export class AuthService {
     if (!userData) {
       return;
     }
-
+   // create the user instance
     const loadedUser = new User(
       userData.email,
       userData.id,
       userData._token,
       new Date(userData._tokenExpirationDate)
     );
-
+    // Check if token expires then auto logout
     if (loadedUser.token) {
       this.user.next(loadedUser);
       const expirationDuration =
@@ -96,7 +97,7 @@ export class AuthService {
       this.autoLogout(expirationDuration);
     }
   }
-
+  // log out
   logout() {
     this.user.next(null);
     this.router.navigate(['/auth']);
@@ -106,7 +107,7 @@ export class AuthService {
     }
     this.tokenExpirationTimer = null;
   }
-
+  // auto logout if token expires
   autoLogout(expirationDuration: number) {
     this.tokenExpirationTimer = setTimeout(() => {
       this.logout();
@@ -125,7 +126,7 @@ export class AuthService {
     this.autoLogout(expiresIn * 1000);
     localStorage.setItem('userData', JSON.stringify(user));
   }
-
+  // error display
   private handleError(errorRes: HttpErrorResponse) {
     let errorMessage = 'An unknown error occurred!';
     if (!errorRes.error || !errorRes.error.error) {
@@ -136,10 +137,10 @@ export class AuthService {
         errorMessage = 'This email exists already';
         break;
       case 'EMAIL_NOT_FOUND':
-        errorMessage = 'This email does not exist.';
+        errorMessage = 'Invalid email or password';
         break;
       case 'INVALID_PASSWORD':
-        errorMessage = 'This password is not correct.';
+        errorMessage = 'Invalid email or password';
         break;
     }
     return throwError(errorMessage);

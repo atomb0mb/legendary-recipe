@@ -11,6 +11,7 @@ import { map, tap, take } from 'rxjs/operators';
 
 import { AuthService } from './auth.service';
 
+// To prevent unauthorized access to the URL
 @Injectable({ providedIn: 'root' })
 export class AuthGuard implements CanActivate {
   constructor(private authService: AuthService, private router: Router) {}

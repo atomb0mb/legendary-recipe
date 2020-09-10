@@ -14,22 +14,23 @@ export class DataStorageService {
     private authService: AuthService
   ) {}
 
+  // store the recipe to the database
   storeRecipes() {
     const recipes = this.recipeService.getRecipes();
     this.http
       .put(
-        'https://ng-http-starter-e7c1b.firebaseio.com/recipes.json',
+        'https://lengendaryrecipe.firebaseio.com/recipes.json',
         recipes
       )
       .subscribe(response => {
-        console.log(response);
+        //console.log(response);
       });
   }
-
+  // get the recipe from the database
   fetchRecipes() {
     return this.http
       .get<Recipe[]>(
-        'https://ng-http-starter-e7c1b.firebaseio.com/recipes.json'
+        'https://lengendaryrecipe.firebaseio.com/recipes.json'
       )
       .pipe(
         map(recipes => {

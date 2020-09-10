@@ -1,12 +1,7 @@
-import {
-  Component,
-  ComponentFactoryResolver,
-  ViewChild,
-  OnDestroy
-} from '@angular/core';
+import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Observable, Subscription } from 'rxjs';
+import { Observable } from 'rxjs';
 
 import { AuthService, AuthResponseData } from './auth.service';
 
@@ -18,8 +13,6 @@ export class AuthComponent {
   isLoginMode = true;
   isLoading = false;
   error: string = null;
-
-  private closeSub: Subscription;
 
   constructor(
     private authService: AuthService,
@@ -49,12 +42,12 @@ export class AuthComponent {
 
     authObs.subscribe(
       resData => {
-        console.log(resData);
+        //console.log(resData);
         this.isLoading = false;
         this.router.navigate(['/recipes']);
       },
       errorMessage => {
-        console.log(errorMessage);
+        //console.log(errorMessage);
         this.error = errorMessage;
         this.isLoading = false;
       }

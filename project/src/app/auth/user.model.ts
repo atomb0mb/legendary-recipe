@@ -1,3 +1,4 @@
+// User instance that store in the database
 export class User {
   constructor(
     public email: string,
