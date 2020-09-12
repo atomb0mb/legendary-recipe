@@ -65,23 +65,23 @@ Pre: Use case 3
 2. Click > Manage Recipe > Edit recipe
 3. On the top right, click > Manage > Save Data
 
-## Use case 7 - To add ingredient to your shopping list via selected recipe
+## Use case 7 - To add ingredient to the shopping list via selected recipe
 1. Select a recipe from your list.
 2. Click > Manage Recipe > To Shopping List
 
 ## Use case 8 - To view your shopping list
 1. Click > Shopping List tab
 
-## Use case 9 - To add ingredient to your shopping list at Shopping List tab
+## Use case 9 - To add ingredient on your shopping list at Shopping List tab
 2. Enter the name field and amount field
 3. Click > Add
 
-## Use case 10 - To edit ingredient to your shopping list at Shopping List tab
+## Use case 10 - To edit ingredient on your shopping list at Shopping List tab
 1. Select the ingredient from the list
 2. Edit the name field and/or amount field
 3. Click > Update
 
-## Use case 11 - To delete ingredient to your shopping list at Shopping List tab
+## Use case 11 - To delete ingredient on your shopping list at Shopping List tab
 1. Select the ingredient from the list
 2. Click > Delete
 
