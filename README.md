@@ -10,7 +10,7 @@ demo: https://lengendaryrecipe.web.app
 * [FireBase-RestAPI](https://firebase.google.com/docs/reference/rest/auth#section-api-usage)
 
 ## Project Description
-As a cooking lover, I always want to manage my recipe on like pinterest. But I want to start from a small step. So I learned Angular and created this simple recipe book application. I can log in and manage and view my recipe. When I decides which recipe to make on that day, I can add the ingredient to the shopping list for shopping!
+As a cooking lover, I always want to manage my recipe on like pinterest. But I want to start from a small step. So I learned Angular and created this simple recipe book application. I can log in and manage and view my recipe. When I decide which recipe to make on the day, I can add the ingredient to the shopping list for shopping!
 
 ## Overview
 
