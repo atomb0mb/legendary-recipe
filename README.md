@@ -29,7 +29,7 @@ As a cooking lover, I always want to manage my recipe on like pinterest. But I w
 * The unauthorized user is restricted to URL access. It will redirect the unauthorized user to the login page.
 
 
-## Usecase 1 Create an account or Login with an exisiting accont
+## Use case 1 - Create an account or Login with an exisiting accont
 Use the sample account for testing or Create a new account
     id:       test@hotmail.com
     pass:     332211
@@ -39,49 +39,49 @@ To Create a new account
 3. Click > Sign up
 
 
-## Use case 2 Login and retrieve the recipe
+## Use case 2 - Login and retrieve the recipe
 1. Enter your Email and Password then clicks > Login.
 2. After login, you will redirect to the recipe page. The recipe page is empty.
 3. On the top right, click > Manage > Fetch Data
 4. After fetching the data, you will see the recipes.
 
-## Use case 3 add a new recipe 
+## Use case 3 - Add a new recipe 
 1. On the recipe page, click > New Recipe
 2. On the right, Enter the following fields: name, image URL, and description. Ingredient is optional.
 3. Once you are done, click > Save.
 4. The new recipe will show up on the list.
 
-## Use case 4 To save your recipe to the database
+## Use case 4 - To save your recipe to the database
 Pre: Use case 3
 1. On the top right, click > Manage > Save Data
 
-## Use case 5 To delete your recipe and update the database
+## Use case 5 - To delete your recipe and update the database
 1. Select a recipe from your list.
 2. Click > Manage Recipe > Delete recipe
 3. On the top right, click > Manage > Save Data
 
-## Use case 6 To edit your recipe and update the database
+## Use case 6 - To edit your recipe and update the database
 1. Select a recipe from your list.
 2. Click > Manage Recipe > Edit recipe
 3. On the top right, click > Manage > Save Data
 
-## Use case 7 To add ingredient to your shopping list via selected recipe
+## Use case 7 - To add ingredient to your shopping list via selected recipe
 1. Select a recipe from your list.
 2. Click > Manage Recipe > To Shopping List
 
-## Use case 8 To view your shopping list
+## Use case 8 - To view your shopping list
 1. Click > Shopping List tab
 
-## Use case 9 To add ingredient to your shopping list at Shopping List tab
+## Use case 9 - To add ingredient to your shopping list at Shopping List tab
 2. Enter the name field and amount field
 3. Click > Add
 
-## Use case 10 To edit ingredient to your shopping list at Shopping List tab
+## Use case 10 - To edit ingredient to your shopping list at Shopping List tab
 1. Select the ingredient from the list
 2. Edit the name field and/or amount field
 3. Click > Update
 
-## Use case 11 To delete ingredient to your shopping list at Shopping List tab
+## Use case 11 - To delete ingredient to your shopping list at Shopping List tab
 1. Select the ingredient from the list
 2. Click > Delete
 
