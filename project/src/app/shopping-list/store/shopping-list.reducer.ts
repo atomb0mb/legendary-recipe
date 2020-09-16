@@ -1,5 +1,5 @@
-import {Ingredient} from '../shared/ingredient.model';
-import * as slaction from './shopping-list.actions';
+import {Ingredient} from '../../shared/ingredient.model';
+import * as slaction from '../shopping-list.actions';
 
 const initialState = {
 
@@ -17,5 +17,7 @@ export function shoppingListReducer(state = initialState, action: slaction.AddIn
             ...state,
             ingredient: [...state.ingredients, action.payload]
             }
+        default:
+            return state;    
     }
 }
