@@ -39,7 +39,7 @@ export function shoppingListReducer(state = initialState, action: ShoppingListAc
             return {
             ...state,
             ingredients: state.ingredients.filter((ingrd, idx) =>  {
-                return idx !== action.payload.index;
+                return idx !== action.payload;
             })
             }              
                    
