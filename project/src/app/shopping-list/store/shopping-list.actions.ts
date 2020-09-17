@@ -34,7 +34,7 @@ export class DeleteIngredients implements Action{
     readonly type =  DELETE_INGREDIENT;
  
 
-    constructor(public index: number){}
+    constructor(public payload: number){}
 }
 // typescript feature
 export type ShoppingListActions = AddIngredient | AddIngredients | UpdateIngredient | DeleteIngredients;
