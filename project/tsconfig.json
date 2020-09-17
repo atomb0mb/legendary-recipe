@@ -17,14 +17,6 @@
       "path": "./e2e/tsconfig.json"
     }
 ],
-"paths": {
-  "rxjs": [
-    "node_modules/rxjs"
-  ],
-  "rxjs/*": [
-    "node_modules/rxjs/*"
-  ]
-}
 }
 
 
