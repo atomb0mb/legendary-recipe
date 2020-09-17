@@ -14,14 +14,24 @@ export function shoppingListReducer(state = initialState, action: ShoppingListAc
     switch(action.type) {
         case ShoppingListActions.ADD_INGREDIENT:
             return {
-            ...state,
-            ingredients: [...state.ingredients, action.payload]
+            ...state, // CALL existing state
+            ingredients: [...state.ingredients, action.payload] // override
             }
         case ShoppingListActions.ADD_INGREDIENTS:
             return {
             ...state,
             ingredients: [...state.ingredients, ...action.payload]
             }
+        case ShoppingListActions.UPDATE_INGREDIENT:
+            return {
+            ...state,
+            ingredients: [...state.ingredients, action.payload]
+            }
+        case ShoppingListActions.DELETE_INGREDIENT:
+            return {
+            ...state,
+            ingredients: [...state.ingredients]
+            }              
                    
         default:
             return state;    
