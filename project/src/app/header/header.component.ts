@@ -1,8 +1,10 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
-
+import { map } from 'rxjs/operators';
 import { DataStorageService } from '../shared/data-storage.service';
 import { AuthService } from '../auth/auth.service';
+import * as fromApp from '../store/app.reducer';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-header',
@@ -14,11 +16,12 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   constructor(
     private dataStorageService: DataStorageService,
-    private authService: AuthService
-  ) {}
+    private authService: AuthService,
+    private store: Store<fromApp.AppState>
+  ) { }
   // hide the recipe tab if not login
   ngOnInit() {
-    this.userSub = this.authService.user.subscribe(user => {
+    this.userSub = this.store.select('auth').pipe(map(authState => { return authState.user })).subscribe(user => {
       this.isAuthenticated = !!user;
     });
   }
@@ -26,7 +29,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   onSaveData() {
     this.dataStorageService.storeRecipes();
   }
-   // get the recipe from the database
+  // get the recipe from the database
   onFetchData() {
     this.dataStorageService.fetchRecipes().subscribe();
   }
