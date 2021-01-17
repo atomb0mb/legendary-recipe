@@ -10,9 +10,11 @@ import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core.module'
 import { AuthModule } from './auth/auth.module';
 import { StoreModule } from "@ngrx/store";
+import { StoreDevtoolsModule} from "@ngrx/store-devtools"
 import * as fromApp from './store/app.reducer'
 import { EffectsModule } from '@ngrx/effects';
-import { AuthEffects } from './auth/store/auth.effects'
+import { AuthEffects } from './auth/store/auth.effects';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,7 @@ import { AuthEffects } from './auth/store/auth.effects'
     AppRoutingModule,
     ShoppingListModule,
     StoreModule.forRoot(fromApp.appReducer),
+    StoreDevtoolsModule.instrument({logOnly: environment.production}),
     EffectsModule.forRoot([AuthEffects]),
     SharedModule,
     CoreModule,
