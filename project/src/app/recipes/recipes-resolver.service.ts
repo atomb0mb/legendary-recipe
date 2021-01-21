@@ -9,7 +9,6 @@ import * as fromApp from '../store/app.reducer';
 import * as RecipeActions from './store/recipe.actions';
 import { Actions, ofType } from '@ngrx/effects';
 import { Recipe } from './recipe.model';
-import { DataStorageService } from '../shared/data-storage.service';
 import { RecipeService } from './recipe.service';
 import { take, map, switchMap } from 'rxjs/operators';
 import { of } from 'rxjs';
@@ -23,7 +22,7 @@ export class RecipesResolverService implements Resolve<Recipe[]> {
   ) {}
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    // const recipes = this.recipesService.getRecipes();
+
 
     return this.store.select('recipes').pipe(
       take(1),
@@ -37,13 +36,5 @@ export class RecipesResolverService implements Resolve<Recipe[]> {
         return of(recipes);
       }
     }))
-
-    // if (recipes.length === 0) {
-    //   this.store.dispatch(new RecipeActions.FetchRecipes());
-    //   return this.actions$.pipe(ofType(RecipeActions.SET_RECIPE), take(1))
-    //   //this.dataStorageService.fetchRecipes();
-    // } else {
-    //   return recipes;
-    // }
   }
 }
