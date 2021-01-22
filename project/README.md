@@ -25,16 +25,3 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
-
-Then you can live serve the Universal app on localhost:4200 by running ...
-
-npm run dev:ssr
-
-
-
-● Or you can use the two commands shown by Max, and serve a static build of the app on localhost:4000:
-
-npm run build:ssr
-
-npm run serve:ssr
-
